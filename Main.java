@@ -18,7 +18,9 @@ public class Main {
             System.out.println("2. Remove Player");
             System.out.println("3. View Team");
             System.out.println("4. Simulate Game");
-            System.out.println("5. Exit");
+            System.out.println("5. Sort by Batting Average");
+            System.out.println("6. Sort by Home Runs");
+            System.out.println("7. Exit");
             System.out.print("Choice: ");
 
             choice = sc.nextInt();
@@ -46,6 +48,18 @@ public class Main {
                     break;
 
                 case 5:
+                    team.sortByBattingAverageDescending();
+                    System.out.println("Sorted by batting average!");
+                    team.displayPlayers();
+                    break;
+
+                case 6:
+                    team.sortByHomeRunsDescending();
+                    System.out.println("Sorted by home runs!");
+                    team.displayPlayers();
+                    break;
+
+                case 7:
                     System.out.println("Goodbye!");
                     break;
 
@@ -53,7 +67,7 @@ public class Main {
                     System.out.println("Invalid choice.");
             }
 
-        } while (choice != 5);
+        } while (choice != 7);
 
         sc.close();
     }
