@@ -38,6 +38,9 @@ public class Player {
       + " | HR: " + homeRuns
       + " | SO: " + strikeOuts;
   }
+  public int getHomeRuns() {
+    return homeRuns;
+  }
 }
 
     
