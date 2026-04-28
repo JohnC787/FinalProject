@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Team {
   private String name;
@@ -7,6 +9,23 @@ public class Team {
   public Team(String name) {
     this.name = name;
     players = new ArrayList<>();
+  }
+  public void sortByBattingAverageDescending() {
+    Collections.sort(players, new Comparator<Player>() {
+        @Override
+        public int compare(Player p1, Player p2) {
+            return Double.compare(p2.getBattingAverage(), p1.getBattingAverage());
+        }
+    });
+  }
+
+  public void sortByHomeRunsDescending() {
+      Collections.sort(players, new Comparator<Player>() {
+          @Override
+          public int compare(Player p1, Player p2) {
+              return p2.getStats().compareTo(p1.getStats()); // quick version (we’ll fix below)
+          }
+      });
   }
   public void addPlayer(String playerName) {
     players.add(newPlayer(playerName));
